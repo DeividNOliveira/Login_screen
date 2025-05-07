@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Página Estática</title>
+    </head>
+        <body>
+            <form id="loginForm" onsubmit="validator_info(event)">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="nome" autocomplete="given-name">
+
+            <label for="password">senha:</label>
+            <input type="password" id="password" name="senha" autocomplete="current-password">
+            <button type="submit">Enviar</button>
+
+            <div id="message"> </div>
+            </form>
+
+            <script>
+                function validator_info(event){
+                    event.preventDefault();
+                    const inputValuename = document.getElementById('name').value;
+                    const inputValuepassword = document.getElementById('password').value;
+                    const messages = document.getElementById('message');
+                    console.log("name:", inputValuename);
+                    console.log("password:", inputValuepassword);
+
+                    if(inputValuename&& inputValuepassword){
+                        messages.textContent = 'Deu certo!';
+                    }else{
+                        messages.textContent = 'Preencha todos os campos';
+                    }
+                }
+            </script>
+
+
+
+        </body>
+    </head>
